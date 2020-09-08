@@ -31,11 +31,11 @@ export default function Intro({ passMode, mode }) {
                     <div>Front End Developer</div>
                     <div className='links'>
                         <div className='linkedin'>
-                            <i class="fab fa-linkedin"></i>
+                            <a href='https://www.linkedin.com/in/c%C4%83lin-dodon-90217a107/' target='_blank'><i class="fab fa-linkedin"></i></a>
                         </div>
                         <div className='cv'>
-                            CV
-            </div>
+                            <a href='https://pdfhost.io/v/0THsIkCgc_Front_End_Developer.pdf' target='_blank'>CV</a>
+                        </div>
                     </div>
                 </div>
             </div>

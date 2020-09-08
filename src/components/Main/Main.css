@@ -163,6 +163,7 @@
 }
 
 @media screen and (max-width: 375px) {
+   
     .main {
         width: 100vw; 
     }
@@ -189,5 +190,9 @@
     .projects-wrapper > div .description .links {
         font-size: 18px;
         margin-top: 7px;
+    }
+
+    .main .skills-wrapper .skills-top ul li {
+        width: 100px !important;
     }
   }
