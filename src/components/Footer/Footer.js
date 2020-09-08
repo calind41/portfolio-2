@@ -30,7 +30,7 @@ export default function Footer({ mode }) {
                 setSubject('');
                 setTo('');
                 setMessage('');
-                await axios.post('http://46.101.127.102:5000/send', { name, subject, to, message });
+                await axios.post('https://calindodon.site/send', { name, subject, to, message });
             }
             catch (err) {
                 console.log(err);
