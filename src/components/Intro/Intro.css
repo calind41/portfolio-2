@@ -157,6 +157,9 @@
     color: #000;
     text-decoration: none;
   }
+  .links > div .dark_a {
+    color: #fff;
+  }
 
   @media screen and (max-width: 1200px) {
     .intro .right {
