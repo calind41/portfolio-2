@@ -1,25 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
 import './App.css';
+import Intro from './components/Intro/Intro'
+import Main from './components/Main/Main'
+import Footer from './components/Footer/Footer'
 
 function App() {
+
+  const [m, setM] = useState(localStorage.getItem('mode'));
+  useEffect(() => {
+    if (localStorage.getItem('mode') === 'dark') {
+      document.body.style.backgroundColor = '#192734'
+    } else {
+      document.body.style.backgroundColor = '#fff'
+    }
+  }, [])
+  useEffect(() => {
+    if (m !== '') {
+      document.body.style.backgroundColor = m === 'dark' ? '#192734' : '#fff'
+      localStorage.setItem('mode', m);
+    }
+
+  }, [m])
+
+  const passMode = mode => {
+    setM(mode);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Intro mode={m === null ? 'light' : m} passMode={passMode} />
+      <Main mode={m == null ? 'light' : m} />
+      <Footer mode={m == null ? 'light' : m} />
+    </>
   );
 }
 
